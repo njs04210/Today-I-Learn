@@ -9,8 +9,12 @@ import java.util.Optional;
 
 public class MemberService { /** test 만드려면 cmd + Shift + T **/
 
-//  회원서비스를 만드려면 회원리포지토리가 필요함.
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+//외부에서 memberRepository를 넣어주는 형태. => DI(Dependencies Injection) 의존성 주입
 
     /**
      * 회원 가입

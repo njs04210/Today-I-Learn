@@ -14,8 +14,20 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+/*
+    MemberService memberService = new MemberService(); //clear를 해줘야하는데 memberService밖에 없음. 리포지토리 필요
     MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+*/
+    //위 코드는 테스트시 다른 MemoryMemberRepository 객체를 사용한다는 취약점이 있다. 아래의 코드로 개선한다.
+
+    MemberService memberService;
+    MemoryMemberRepository memberRepository;
+
+    @BeforeEach
+    public void beforeEach() {
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
 
     @AfterEach
     public void afterEach() {
