@@ -1,0 +1,6 @@
+<html xmlns:th="http://www.thymeleaf.org"> <!-- thymeleaf 엔진을 th라고 선언 -->
+<body>
+<p th:text="'hello ' + ${name}">hello empty</p> <!-- hello empty 쓰는 이유 : 서버 없이 파일을 열어봐도 껍데기를 확인가능-->
+<!-- $안은 model에서의 key값임. 즉, 달러표시의 사용은 model에서 값을 가져온다는 뜻. model에서 key값이 name인 애의 value를 가져옴 -->
+</body>
+</html>
