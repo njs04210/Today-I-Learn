@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="container">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="member : ${members}"> <!--th 템플릿 엔진을 이용해 루프를 돌면서 members라는 모델에 담긴 객체를 하나씩 꺼냄-->
+                <td th:text="${member.id}"></td> <!-- 스프링 mvc의 '자바빈 프로퍼티 규약 - getter&setter"를 이용해 알아서 getId, getName 메소드를 실행해 값을 가져옴 -->
+                <td th:text="${member.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div><!-- /container -->
+
+</body>
+</html>
