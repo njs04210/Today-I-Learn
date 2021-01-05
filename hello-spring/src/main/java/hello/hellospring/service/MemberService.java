@@ -9,16 +9,18 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class MemberService { /** test 만드려면 cmd + Shift + T **/
+public class MemberService {
+    /**
+     * test 만드려면 cmd + Shift + T
+     **/
 
-private final MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
-    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
-//외부에서 memberRepository를 넣어주는 형태. => DI(Dependencies Injection) 의존성 주입
+    //외부에서 memberRepository를 넣어주는 형태. => DI(Dependencies Injection) 의존성 주입
+    //구체적으로 DI의 방법 중 '생성자 주입'.
 
     /**
      * 회원 가입
@@ -35,7 +37,7 @@ private final MemberRepository memberRepository;
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
-                } );
+                });
         //Optional<Member> result = memberRepository.findByName(member.getName()); //이름을 가져와서 그 이름으로 리포지토리에서 조회함
 //        result.ifPresent(m -> {
 //            throw new IllegalStateException("이미 존재하는 회원입니다.");
@@ -55,7 +57,6 @@ private final MemberRepository memberRepository;
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
-
 
 
 }
