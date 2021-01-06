@@ -1,4 +1,4 @@
-# What-I-Learn
+# Today-I-Learn
 ✍️ 개인적으로 학습한 내용을 정리합니다
 
 * hello-spring
