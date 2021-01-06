@@ -13,3 +13,9 @@ public interface MemberRepository {
     List<Member> findAll(); //지금까지 저장된 모든 회원들의 리스트를 반환함
 
 }
+
+/**
+ * 회원을 저장하는 역할은 MemberRepository가 하지만
+ * '구현'은 DB를 정하지않은 초기에는 일단 메모리(MemoryMemberRepository)에 하고
+ * DB가 정해지면 DB와 연동해 JDBC로 진행(JdbcMemberRepository)
+ */
