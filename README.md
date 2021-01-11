@@ -10,4 +10,4 @@
 
 	* 얄코님의 객체지향 디자인 패턴 영상을 보며 실습한 폴더
 	* LINK: [객체지향 디자인 패턴 1](https://www.yalco.kr/29_oodp_1/)
-	* LINK: [객체지향 디자인 패턴 1](https://www.yalco.kr/30_oodp_2/)
+	* LINK: [객체지향 디자인 패턴 2](https://www.yalco.kr/30_oodp_2/)
